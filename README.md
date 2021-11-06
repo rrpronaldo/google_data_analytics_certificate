@@ -253,10 +253,14 @@ I need to address this in a new version further.
 
 
 ---
-# **Analyse**
+# **Analyse and Share**
 
 
-In Analyse phase I will using tools to transform and organize the information. Then I can draw useful conclusions, make predictions and drive informed decision making. 
+In **Analyse** phase I will using tools to transform and organize the information. Then I can draw useful conclusions, make predictions and drive informed decision making. 
+
+The **Share** phase is when I will interpret results and share them with others to help stakeholders make effective data-driven decisions. 
+
+I will do these two phases together, because I use visualizations to analyse the data, interpret results and share insigths with stakeholders. Sometimes, I need to go back to some previous phase to solve some problem that emerges here.
 
 I use [Microsoft Power BI](https://powerbi.microsoft.com/en-us/) to analyse data and to get some insights. This tool is like the Tableau and I have some experience working in my job. Taking in account the amount of rows, about 7.4 millions, the Power BI can easily handle with this and provides a useful tool box of visualizations.
 
@@ -300,3 +304,30 @@ if they need bike to go for home and don't had a station to return the bike arou
 | member	| 627			| 39,3			|
 
 
+**Most Common Trips**
+I look to the most common trips between stations to identify when are the memberships clients. 
+Using this, I build a SQL query that results in the table below. With this information, we can identify 
+trips with high percent of memberships. These trips bring a insight that customers using that places to common activities 
+and casual clients in this stations could be more inclinable to be a member.
+
+![image](https://user-images.githubusercontent.com/48371088/140622480-3e36cce4-ac04-4e5c-89f7-c99764f54072.png)
+
+
+
+---
+# **Act**
+
+Finally, I will act on my findings to stakeholders. To do this, I deliver three top recommendations based on my analysis.
+
+Recommendations:
+ 1. Offer to casual users in the longest rides a membership program, that could provide for these clients a money saving or better experience, and for Cyclistic the loyalty of these customers.
+ 2. Offer to casual users in the most common trips with high percent of memberships an offer to be a member. 
+ 3. Investigate why some customers used the bike for more than 24 hours, the longest ride had about 40 days. This situation could be a problem in the system, a customer who forgot to return the bike or a necessity for Cyclistic provides more station options in some neighborhood.
+
+
+**Next releases**:
+I will need to:
+ * Improve the cleaning process by address the NULL registers;
+ * Add and analyze more metrics related to stations and rideable type;
+ * Get more data about historical number of memberships;
+ * Create other recommendations based on the new data.
