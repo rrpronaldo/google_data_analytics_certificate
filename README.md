@@ -280,3 +280,23 @@ In the first view I can see some insights:
  * The station Streeter Dr & Grand Ave is the most common started ride;
  * Normally, the majority of rides are from memberships. But this bring a problem, I don't have the atual number os membership in the company, and I need to compare this measure over time;
  * Casual clients have the longest rides. It could be explained that these clients use the bikes for tourism or a leisure activity.
+
+**Max Ride Length**:
+Looking at the longest rides, I can see that many clients use the bike for more than 1 day or 24 hours.
+The first 22 longest rides are list below. 
+
+![image](https://user-images.githubusercontent.com/48371088/140618385-d8f72abc-1410-45f4-bb1d-dca73bddd457.png)
+
+Using SQL, I aggregate the information for rides with more than 24 hours. 
+We can see in the table below that had 5158 casual clients using bikes 
+in a mean ride length of 71 hours. Furthermore, member clients used bikes 
+in a mean ride length of 39 hours in 627 cases of more than 1 day.
+I believe this can happen when clients forgot to give back the bikes or 
+if they need bike to go for home and don't had a station to return the bike around there. 
+
+| member_casual	| number_of_rides	| mean_ride_length	|
+| ------------- | --------------	| ----------------	|
+| casual	| 5158			| 71,84			|
+| member	| 627			| 39,3			|
+
+
