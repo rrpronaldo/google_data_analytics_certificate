@@ -84,10 +84,10 @@ After I imported all datasets to database, I did some verifications. The relatio
 This relation can be obtained with the following code:
 ```SQL
 SELECT
-    TABLES.NAME											 AS TABLE_NAME,
-    FORMAT( PARTITIONS.rows , 'N0', 'pt-br' )               AS QT_REGISTERS, 
+    TABLES.NAME						AS TABLE_NAME,
+    FORMAT( PARTITIONS.rows , 'N0', 'pt-br' )           AS QT_REGISTERS, 
     FORMAT( (SUM(UNITS.total_pages) * 8)
-			/CONVERT(FLOAT,1024) , 'N1', 'pt-br' )          AS TOTAL_SIZE_MB
+	     /CONVERT(FLOAT,1024) , 'N1', 'pt-br' )     AS TOTAL_SIZE_MB
 FROM
     sys.tables            AS TABLES
 INNER JOIN
@@ -150,21 +150,21 @@ I add too a [columnstore index](https://docs.microsoft.com/en-us/sql/t-sql/state
 
 ```SQL
 CREATE TABLE [dbo].[TB_DIVVY_TRIPDATA](
-	[ride_id]				    [nvarchar](100) NULL,
-	[rideable_type]			  [nvarchar](100) NULL,
-	[started_at]			     [datetime2](7) NULL,
-	[ended_at]				   [datetime2](7) NULL,
-	[ride_length_seconds]	    [float] NULL,
-	[day_of_week]			    [tinyint] NULL,
-	[start_station_name]	     [nvarchar](100) NULL,
-	[start_station_id]		   [nvarchar](100) NULL,
-	[end_station_name]		   [nvarchar](100) NULL,
-	[end_station_id]		     [nvarchar](100) NULL,
-	[start_lat]				  [float] NULL,
-	[start_lng]				  [float] NULL,
-	[end_lat]				    [float] NULL,
-	[end_lng]				    [float] NULL,
-	[member_casual]			  [nvarchar](100) NULL
+	[ride_id]			[nvarchar](100) NULL,
+	[rideable_type]			[nvarchar](100) NULL,
+	[started_at]			[datetime2](7) NULL,
+	[ended_at]			[datetime2](7) NULL,
+	[ride_length_seconds]	    	[float] NULL,
+	[day_of_week]			[tinyint] NULL,
+	[start_station_name]	     	[nvarchar](100) NULL,
+	[start_station_id]		[nvarchar](100) NULL,
+	[end_station_name]		[nvarchar](100) NULL,
+	[end_station_id]		[nvarchar](100) NULL,
+	[start_lat]			[float] NULL,
+	[start_lng]			[float] NULL,
+	[end_lat]			[float] NULL,
+	[end_lng]			[float] NULL,
+	[member_casual]			[nvarchar](100) NULL
 ) ON [PRIMARY]
 GO
 CREATE CLUSTERED COLUMNSTORE INDEX [CCI_DIVVY_TRIPDATA] ON [dbo].[TB_DIVVY_TRIPDATA] WITH (DROP_EXISTING = OFF, COMPRESSION_DELAY = 0) ON [PRIMARY]
@@ -194,7 +194,7 @@ BEGIN
 			,[started_at]
 			,[ended_at]
 			, DATEDIFF( SECOND, [started_at], [ended_at])	AS [ride_length_seconds]
-			, DATEPART(weekday, [started_at])				AS [day_of_week]
+			, DATEPART(weekday, [started_at])		AS [day_of_week]
 			,[start_station_name]
 			,[start_station_id]
 			,[end_station_name]
